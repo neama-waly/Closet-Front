@@ -1,7 +1,7 @@
 import { useEffect, useState ,useRef} from "react";
 import { useNavigate} from "react-router-dom";
 import "../App.css"
-const api_url = "http://localhost:5010/api";
+const api_url = "https://closet-back-end.vercel.app/api";
 
 function Dashboard(){
     const navigate = useNavigate();

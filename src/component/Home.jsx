@@ -12,7 +12,7 @@ import { useCart } from "../context/CartContext";
 import { useAuth } from "../context/AuthContext";
 import Profile from "./Profile";
 
-const api_url = "http://localhost:5010/api";
+const api_url = "https://closet-back-end.vercel.app/api";
 
 function Home(){
     const navigate = useNavigate();

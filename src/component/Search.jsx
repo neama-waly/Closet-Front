@@ -1,7 +1,7 @@
 import "../App.css"
 import { useState , useEffect} from "react";
 import { useNavigate } from "react-router-dom";
-const api_url = "http://localhost:5010/api";
+const api_url = "https://closet-back-end.vercel.app/api";
 
 function Search({ isOpen, onClose }){
 

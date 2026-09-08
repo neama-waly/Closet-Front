@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { useNavigate, Link } from "react-router-dom";
 import "../App.css";
 
-const api_url = "http://localhost:5010/api";
+const api_url = "https://closet-back-end.vercel.app/api";
 
 function Login(){
     const [email, setEmail] = useState("");

@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { useAuth } from "../context/AuthContext";
 
-const api_url = "http://localhost:5010/api";
+const api_url = "https://closet-back-end.vercel.app/api";
 
 export default function OrderSuccess(){
 

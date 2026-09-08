@@ -26,7 +26,7 @@ function TrackOrder(){
       return;
     }
 
-    fetch("http://localhost:5010/api/orders/my-orders", {
+    fetch("https://closet-back-end.vercel.app/api/orders/my-orders", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {

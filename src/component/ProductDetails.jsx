@@ -2,7 +2,7 @@ import { useState , useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import "../App.css";
-const api_url = "http://localhost:5010/api";
+const api_url = "https://closet-back-end.vercel.app/api";
 function ProductDetails(){
 
     const {id} = useParams();

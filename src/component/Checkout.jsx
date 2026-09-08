@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {useNavigate} from "react-router-dom";
-const api_url = "http://localhost:5010/api";
+const api_url = "https://closet-back-end.vercel.app/api";
 import {useAuth} from "../context/AuthContext"
 export default function Checkout({cartItems , clearCart }){
 
