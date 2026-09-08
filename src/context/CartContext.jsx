@@ -9,7 +9,7 @@ export const CartProvider = ({children})=>{
 
 const fetchCart = useCallback(() => {
     if (token) {
-      fetch("http://localhost:5010/api/cart", {
+      fetch("https://closet-back-end.vercel.app/api/cart", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => res.json())
@@ -17,7 +17,7 @@ const fetchCart = useCallback(() => {
           if (data && data.items) {
             const formatted = data.items.map((item) => ({
               id: item.product.id,
-              cartItemId: item.id, // مهم جداً للمسح
+              cartItemId: item.id, 
               title: item.product.title,
               price: item.product.price,
               quantity: item.quantity,
@@ -43,7 +43,7 @@ const fetchCart = useCallback(() => {
     if (!token) return alert("Please login first!");
 
     try {
-      const res = await fetch("http://localhost:5010/api/cart/add", {
+      const res = await fetch("https://closet-back-end.vercel.app/api/cart/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -68,7 +68,7 @@ const fetchCart = useCallback(() => {
     if (!token) return;
 
     try {
-      const res = await fetch(`http://localhost:5010/api/cart/item/${cartItemId}`, {
+      const res = await fetch(`https://closet-back-end.vercel.app/api/cart/item/${cartItemId}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
