@@ -1,11 +1,16 @@
 import { createContext, useState, useEffect , useContext , useCallback} from "react";
 import {useAuth} from "./AuthContext"
+import { useNavigate } from "react-router-dom";
 
 const CartContext = createContext();
+// eslint-disable-next-line react-hooks/rules-of-hooks
+const navigate = useNavigate();
 
 export const CartProvider = ({children})=>{
         const { token } = useAuth();
         const [cart , setCart] = useState([])
+        
+        
 
 const fetchCart = useCallback(() => {
     if (token) {
@@ -40,7 +45,11 @@ const fetchCart = useCallback(() => {
       }, [fetchCart]);
 
    const addToCart = async (product, selectedSize, selectedColor, quantity = 1) => {
-    if (!token) return alert("Please login first!");
+    if (!token){
+      return alert("Please login first!");
+      // eslint-disable-next-line no-unreachable
+      navigate("/Login")
+    } 
 
     try {
       const res = await fetch("https://closet-back-end.vercel.app/api/cart/add", {
